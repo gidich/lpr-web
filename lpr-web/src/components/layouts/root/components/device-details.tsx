@@ -1,7 +1,6 @@
 import React from 'react';
 import Webcam from 'react-webcam';
 import { YoloDetection } from '../util/yolo-detection';
-import { im } from 'mathjs';
 import { detectVideo } from '../util/detect';
 
 interface DeviceDetailsProps {

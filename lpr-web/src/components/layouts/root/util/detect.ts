@@ -1,7 +1,7 @@
 import { YoloDetection } from "./yolo-detection";
 
 
-function prepare_input(vidSource:HTMLVideoElement,canvasRef:HTMLCanvasElement,boxes:[number, number, number, number, string, number][]) {
+function prepare_input(canvasRef:HTMLCanvasElement,boxes:[number, number, number, number, string, number][]) {
   if(canvasRef === null || boxes.length === 0) return;
   
   const ctx = canvasRef.getContext("2d");
@@ -45,7 +45,7 @@ export const detectVideo = (vidSource:HTMLVideoElement, canvasRef:HTMLCanvasElem
       if (ctx === null) return;
       ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height); // clean canvas
       if(boxes.length > 0){   
-          prepare_input(vidSource,canvasRef,boxes);
+          prepare_input(canvasRef,boxes);
       }
       requestAnimationFrame(detectFrame); // get another frame
     });
